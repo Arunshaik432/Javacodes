@@ -4,7 +4,7 @@ class Q{
     int num;
     boolean valueset=false;
     public synchronized void put(int num)  {
-        while (valueset){
+        if (valueset){
             try {
                 wait();
             } catch (InterruptedException e) {
@@ -17,7 +17,7 @@ class Q{
         notify();
     }
     public synchronized void get(){
-        while (!valueset){
+        if (!valueset){
             try {
                 wait();
             } catch (InterruptedException e) {
