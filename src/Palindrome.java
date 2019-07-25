@@ -6,6 +6,7 @@ public class Palindrome {
         int temp=num,sum=0;
         boolean palin=false;
         while(!palin)
+
         {   while(num>0)
             {   int time=num%10;
                 num=num/10;
